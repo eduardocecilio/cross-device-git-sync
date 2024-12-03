@@ -1,0 +1,59 @@
+## **Resumo da Aplicação e Fluxo de Trabalho**
+
+Este repositório descreve o processo para configurar um fluxo de trabalho eficiente utilizando o **Git** entre dois computadores (Mac e Windows) conectados ao **OneDrive**, com o objetivo de manter um repositório compartilhado entre as duas máquinas. O repositório está configurado para utilizar **SSH** como método de autenticação com o GitHub.
+
+### **Objetivo**
+
+O objetivo deste fluxo de trabalho é permitir que você possa trabalhar de forma sincronizada em dois computadores distintos, mantendo o código sempre atualizado sem a necessidade de realizar **git pull** em cada máquina após o **git push** de outra. Isso é possível porque as alterações feitas no OneDrive são sincronizadas automaticamente entre os computadores, e o Git apenas gerencia o versionamento do código.
+
+### **Como Funciona**
+
+1. **Ambiente Configurado**:
+   - Dois computadores (um Mac e um Windows) possuem a mesma pasta de repositório Git armazenada no OneDrive, sendo automaticamente sincronizada entre as máquinas.
+   - O repositório Git no OneDrive é configurado para usar autenticação **SSH** para o GitHub, e a chave SSH está configurada em ambos os computadores.
+   
+2. **Sincronização Automática**:
+   - Quando um código é alterado em uma das máquinas, o arquivo é salvo automaticamente na pasta do OneDrive.
+   - Após realizar as alterações, é feito um **commit** e **push** no GitHub em uma das máquinas.
+   - Na segunda máquina, o código é automaticamente atualizado, pois o OneDrive mantém a pasta sincronizada. O Git detecta a alteração como um novo arquivo modificado e é possível realizar um **commit** e **push** sem a necessidade de executar **git pull**.
+
+3. **Problemas Resolvidos**:
+   - O fluxo evita a necessidade de estar sempre dando **git pull** quando alterna entre as duas máquinas, devido à sincronização do OneDrive.
+   - As alterações feitas em um computador são automaticamente refletidas no outro, sem a interferência de conflitos de merge, desde que o processo de **commit** e **push** seja seguido corretamente.
+
+### **Instruções de Uso**
+
+Esses são os passos para configurar a estrutura entre os dois computadores, desde a instalação do Git até a sincronização automática:
+
+1. **Configuração do Git**:
+   - Certifique-se de ter o Git instalado nas duas máquinas.
+   - Configure seu nome de usuário e email no Git com os seguintes comandos:
+     ```bash
+     git config --global user.name "Seu Nome"
+     git config --global user.email "seuemail@example.com"
+     ```
+
+2. **Configuração do Repositório no OneDrive**:
+   - Crie uma pasta no OneDrive que será usada para armazenar o repositório Git.
+   - Inicie o repositório Git nessa pasta usando o comando `git init`.
+   - Adicione o repositório remoto (GitHub) usando:
+     ```bash
+     git remote add origin git@github.com:seunome/repositorio.git
+     ```
+
+3. **Uso de SSH para GitHub**:
+   - Gere uma chave SSH para cada máquina e adicione as chaves no GitHub para autenticação.
+   - No GitHub, vá em "Settings" > "SSH and GPG keys" e adicione sua chave pública de cada máquina.
+
+4. **Sincronização entre as Máquinas**:
+   - Sempre que você fizer alterações em uma máquina, faça o **commit** e o **push** para o GitHub.
+   - A segunda máquina irá automaticamente receber as atualizações através do OneDrive, e você pode fazer o **commit** e **push** da mesma forma.
+
+5. **Resolução de Problemas Comuns**:
+   - Certifique-se de que as mudanças feitas não gerem conflitos de merge. Caso ocorra algum conflito, resolva-o utilizando o Git.
+
+### **Vantagens**
+
+- **Facilidade de uso**: Não há necessidade de realizar **git pull** sempre que alternar entre os computadores.
+- **Sincronização automática**: O OneDrive garante que os arquivos estejam sempre atualizados.
+- **Versionamento com Git**: O fluxo de trabalho mantém o versionamento do código e o histórico de mudanças, sem afetar a sincronização entre as máquinas.
