@@ -1,4 +1,4 @@
-## **Resumo da Aplicação e Fluxo de Trabalho**
+## **Aplicação e Fluxo de Trabalho**
 
 Este repositório descreve o processo para configurar um fluxo de trabalho eficiente utilizando o **Git** entre dois computadores (Mac e Windows) conectados ao **OneDrive**, com o objetivo de manter um repositório compartilhado entre as duas máquinas. O repositório está configurado para utilizar **SSH** como método de autenticação com o GitHub.
 
@@ -108,7 +108,7 @@ Esse processo de sincronização entre dois computadores utilizando o Git, o VS 
 
 No entanto, vale ressaltar que o uso do **VS Code** e do **OneDrive** foi uma escolha pessoal para facilitar a edição e o armazenamento dos arquivos. Outras ferramentas de edição de código, como **Sublime Text**, **Atom**, **IntelliJ**, ou **Vim**, podem ser usadas no lugar do VS Code, desde que o Git esteja configurado corretamente.
 
-Além disso, embora o **OneDrive** tenha sido escolhido como sistema de armazenamento na nuvem para esse processo, outras plataformas de nuvem, como **Google Drive**, **Dropbox**, ou **iCloud**, também podem ser utilizadas, desde que ofereçam a capacidade de sincronização entre múltiplos dispositivos de maneira confiável.
+Além disso, embora o **OneDrive** tenha sido escolhido como sistema de armazenamento na nuvem para esse processo, outras plataformas de nuvem, como **Google Drive**, **Dropbox**, ou **iCloud**, também podem ser utilizadas, desde que ofereçam a capacidade de sincronização entre múltiplos dispositivos de maneira confiável e que seja possivel baixar esses apps em sua maquina, pois é necessario ter acesso a pasta locamente no computador.
 
 Quanto aos pacotes e comandos específicos utilizados (como o `dos2unix`, o gerenciamento de final de linha e as configurações do Git), eles foram aplicados para resolver questões práticas que surgiram durante o processo, mas outras soluções podem ser viáveis, dependendo das necessidades e preferências de quem utilizar o repositório.
 
